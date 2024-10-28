@@ -690,6 +690,9 @@ require('lazy').setup({
         -- clangd = {},
         -- gopls = {},
         pyright = {},
+        -- Third party python-lsp-server plugins have to be managed manually
+        -- eg. :PylspInstall pylsp-mypy
+        -- pylsp = {},
         ruff = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs

@@ -93,6 +93,11 @@ P.S. You can delete this when you're done too. It's your config now! :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Disable netrw which takes 300ms to load during startup
+-- Disabling it might cause unwanted side effects.
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
@@ -223,6 +228,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
     vim.hl.on_yank()
   end,
+})
+
+-- Use jq to format JSON files
+-- Trigger with gq in normal mode
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "json",
+    command = "set formatprg=jq",
 })
 
 -- [[ Install `lazy.nvim` plugin manager ]]

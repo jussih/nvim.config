@@ -894,11 +894,11 @@ require('lazy').setup({
         nerd_font_variant = 'mono',
       },
 
-      completion = {
-        -- By default, you may press `<c-space>` to show the documentation.
-        -- Optionally, set `auto_show = true` to show the documentation after a delay.
-        documentation = { auto_show = false, auto_show_delay_ms = 500 },
-      },
+          -- If you prefer more traditional completion keymaps,
+          -- you can uncomment the following lines
+          ['<CR>'] = cmp.mapping.confirm { select = true },
+          ['<Tab>'] = cmp.mapping.select_next_item(),
+          ['<S-Tab>'] = cmp.mapping.select_prev_item(),
 
       sources = {
         default = { 'lsp', 'path', 'snippets', 'lazydev' },

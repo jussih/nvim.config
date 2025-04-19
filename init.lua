@@ -895,12 +895,6 @@ require('lazy').setup({
         nerd_font_variant = 'mono',
       },
 
-          -- If you prefer more traditional completion keymaps,
-          -- you can uncomment the following lines
-          ['<CR>'] = cmp.mapping.confirm { select = true },
-          ['<Tab>'] = cmp.mapping.select_next_item(),
-          ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-
       sources = {
         default = { 'lsp', 'path', 'snippets', 'lazydev' },
         providers = {

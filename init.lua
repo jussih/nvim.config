@@ -247,13 +247,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- Use jq to format JSON files
--- Trigger with gq in normal mode
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "json",
-    command = "set formatprg=jq",
-})
-
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -841,12 +834,14 @@ require('lazy').setup({
         -- Conform can also run multiple formatters sequentially.
         -- stop_after_first is set to true in the default format options
         -- so it will stop after first successful formatter has ran.
-        -- python = { 'isort', 'black' },
         python = { 'ruff_format', 'black', stop_after_first = true },
-        --
-        -- You can use 'stop_after_first' to run the first available formatter from the list
-        javascript = { "prettierd", "prettier", stop_after_first = true },
-        typescript = { "prettierd", "prettier", stop_after_first = true },
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+        json = { "prettier", "jq", stop_after_first = true },
+        markdown = { "prettier" },
+        html = { "prettier" },
+        css = { "prettier" },
+        sass = { "prettier" },
       },
     },
   },

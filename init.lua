@@ -838,7 +838,7 @@ require('lazy').setup({
         javascript = { "prettier" },
         typescript = { "prettier" },
         json = { "prettier", "jq", stop_after_first = true },
-        markdown = { "prettier" },
+        markdown = { "prettier_npx" },
         html = { "prettier" },
         css = { "prettier" },
         sass = { "prettier" },

@@ -170,7 +170,19 @@ vim.opt.scrolloff = 10
 vim.opt.confirm = true
 
 -- Default border for all floating windows
-vim.o.winborder = 'rounded'
+-- Breaks Telscope windows, can enable after this is merged to plenary:
+-- https://github.com/nvim-lua/plenary.nvim/pull/649
+--vim.o.winborder = 'rounded'
+-- Workaround - sets border for lsp hover windows
+local hover = vim.lsp.buf.hover
+---@diagnostic disable-next-line: duplicate-set-field
+vim.lsp.buf.hover = function()
+    return hover({
+        border = "rounded",
+        max_width = math.floor(vim.o.columns * 0.7),
+        max_height = math.floor(vim.o.lines * 0.7),
+    })
+end
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`

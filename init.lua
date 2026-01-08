@@ -732,12 +732,13 @@ require('lazy').setup({
       local servers = {
         clangd = {},
         -- gopls = {},
-        pyright = {},
+        -- pyright = {},
         -- jedi_language_server = {},
         -- Third party python-lsp-server plugins have to be managed manually
         -- eg. :PylspInstall pylsp-mypy
         -- pylsp = {},
         ruff = {},
+        ty = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -745,8 +746,8 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        ts_ls = {},
-        angularls = {},
+        -- ts_ls = {},
+        -- angularls = {},
         --
 
         lua_ls = {

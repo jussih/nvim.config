@@ -24,14 +24,30 @@ Clone into the default nvim configuration location.
 | Windows (cmd)| `%localappdata%\nvim\` |
 | Windows (powershell)| `$env:LOCALAPPDATA\nvim\` |
 
+### LSP servers
+
+[Mason](https://github.com/mason-org/mason.nvim) plugin was dropped from the configuration. LSP servers must be installed manually.
+
+- Python
+  - ruff: https://docs.astral.sh/ruff/installation/
+  - ty: https://docs.astral.sh/ty/installation/
+- Typescript
+  - ts_ls: https://github.com/typescript-language-server/typescript-language-server
+- C++
+  - clangd: https://clangd.llvm.org/installation.html
+- Rust
+  - rust_analyzer: https://rust-analyzer.github.io/book/installation.html
+- Lua
+  - lua_ls: https://github.com/luals/lua-language-server
+  - stylua: https://github.com/JohnnyMorganz/StyLua
+
 ## Management
 
 - Update installed plugins: `:Lazy`
 - Install Treesitter parser: `TSInstall <language>`
   - Requires working C compiler
-- Install and update LSP servers: `:Mason`
-- Query LSP status: `:LspInfo`
-- Restart LSP servers: `:LspRestart`
+- Check LSP status: `:checkhealth vim.lsp`
+- Restart LSP servers: `:lsp restart`
 
 ## Kickstart docs
 

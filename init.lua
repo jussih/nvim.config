@@ -175,7 +175,8 @@ vim.o.confirm = true
 -- Default border for all floating windows
 -- Breaks Telscope windows, can enable after this is merged to plenary:
 -- https://github.com/nvim-lua/plenary.nvim/pull/649
---vim.o.winborder = 'rounded'
+vim.o.winborder = 'rounded'
+vim.o.pumborder = 'rounded'
 -- Workaround - sets border for lsp hover windows
 -- Unneeded in 0.12 with vim.diagnostic.config
 --local hover = vim.lsp.buf.hover
@@ -218,6 +219,7 @@ vim.diagnostic.config {
 }
 
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open diagnostic [E]rrors in float' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
